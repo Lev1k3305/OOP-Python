@@ -1,0 +1,121 @@
+# Практическая работа №5: ООП в Python
+
+## Описание
+Проект содержит примеры кода для изучения объектно-ориентированного программирования (ООП) в Python. Рассматриваются ключевые концепции: классы, объекты, инкапсуляция, наследование, полиморфизм, абстракция, специальные методы и декораторы.
+
+## Содержание
+- Классы и объекты
+- Конструкторы и `self`
+- Методы и свойства
+- Инкапсуляция
+- Наследование
+- Полиморфизм
+- Абстракция
+- Специальные методы
+- Декораторы в классах
+
+## Требования
+- Python 3.6+
+- Библиотеки: `math`, `datetime`, `abc` (встроенные)
+
+## Установка и запуск
+1. Установите Python 3.6 или выше.
+2. Сохраните файл `oop_examples.py`.
+3. Запустите код:
+   ```bash
+   python oop_examples.py
+   ```
+
+## Примеры использования
+Ниже приведены примеры из `oop_examples.py`, демонстрирующие основные концепции ООП:
+
+### 1. Классы и объекты
+Создание и использование объектов класса `Car`:
+```python
+car = Car("Toyota", "Camry", 2020)
+print(f"Car: {car.brand} {car.model}")  # Вывод: Car: Toyota Camry
+print(f"Total cars: {Car.total_cars}")  # Вывод: Total cars: 2
+```
+
+### 2. Конструкторы и `self`
+Использование альтернативного конструктора через `@classmethod`:
+```python
+person = Person.from_age("Боб", 25)
+print(f"Person: {person.name}, Age: {person.age}")  # Вывод: Person: Боб, Age: 2000
+```
+
+### 3. Методы и свойства
+Работа с методами класса `BankAccount`:
+```python
+account = BankAccount("Алиса", 1000)
+account.deposit(500)
+print(f"Balance: {account.balance}")  # Вывод: Balance: 1500
+print(f"Total accounts: {BankAccount.get_total_accounts()}")  # Вывод: Total accounts: 1
+print(f"Is 17 prime? {BankAccount.is_prime(17)}")  # Вывод: Is 17 prime? True
+```
+
+### 4. Инкапсуляция
+Пример защищенного доступа к данным:
+```python
+enc_account = BankAccountEncapsulated("Боб", 1000)
+print(enc_account.deposit(500, "1234"))  # Вывод: Пополнено: 500
+print(enc_account.balance)  # Вывод: 1500
+```
+
+### 5. Наследование
+Использование наследования для класса `Dog`:
+```python
+dog = Dog("Рекс", "Лабрадор")
+print(dog.make_sound())  # Вывод: Рекс гавкает: Гав-гав!
+```
+
+### 6. Полиморфизм
+Полиморфное вычисление площади фигуры:
+```python
+circle = Circle(5)
+print(f"Circle area: {circle.area():.2f}")  # Вывод: Circle area: 78.54
+```
+
+### 7. Абстракция
+Реализация абстрактного класса:
+```python
+cat = Cat("Мурзик")
+print(cat.make_sound())  # Вывод: Мурзик мяукает: Мяу!
+```
+
+### 8. Специальные методы
+Использование магических методов в классе `Book`:
+```python
+book = Book("1984", "George Orwell", 328)
+print(str(book))  # Вывод: "1984" by George Orwell
+print(f"Pages: {len(book)}")  # Вывод: Pages: 328
+```
+
+### 9. Декораторы
+Проверка работы синглтона:
+```python
+db1 = Database()
+db2 = Database()
+print(f"Same database instance: {db1 is db2}")  # Вывод: Same database instance: True
+```
+
+## Примечания
+- Код протестирован на Python 3.9.
+- Экспериментируйте с примерами, изменяя параметры, чтобы лучше понять ООП.
+- Для больших проектов рекомендуется разбить `oop_examples.py` на модули.
+
+## Интеграция с репозиторием
+1. Скопируйте `oop_examples.py` и `README.md` в корень вашего репозитория.
+2. Добавьте файлы в Git:
+   ```bash
+   git add oop_examples.py README.md
+   git commit -m "Добавлены примеры ООП и README"
+   git push origin main
+   ```
+
+## Дополнительные ресурсы
+- [Официальная документация Python](https://docs.python.org/3/)
+- [PEP 8 — Руководство по стилю кода](https://www.python.org/dev/peps/pep-0008/)
+
+## Лицензия
+Материалы предоставлены в образовательных целях (MIT).
